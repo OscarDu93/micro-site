@@ -24,3 +24,50 @@ video {
   background-color: rgba(86, 61, 124, 0.15);
   border: 1px solid rgba(86, 61, 124, 0.2);
 }
+
+// parallax
+
+.object-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.object-wrapper ~ .object-wrapper {
+  justify-content: end;
+}
+
+.object-one {
+  position: absolute;
+  z-index: 2; /* put .green-box above .dashed-box */
+  background: lightgreen;
+  width: 100%;
+  left: 5%;
+  top: -25px;
+  opacity: 0.9;
+}
+
+.object-img {
+  position: absolute;
+  z-index: 3; /* put .gold-box above .green-box and .dashed-box */
+  width: 80%;
+  left: 60px;
+  top: 3em;
+}
+
+#object-star-3 {
+  width: 30%;
+}
+
+#object-star-4 {
+  width: 30%;
+}
+
+#object-star-5 {
+  width: 30%;
+}
+
+#object-star-6 {
+  width: 30%;
+}
