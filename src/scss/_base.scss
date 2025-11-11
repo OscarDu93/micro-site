@@ -48,6 +48,7 @@ video {
   left: 70%;
   top: 55%;
   width: 10%;
+  opacity: 1;
 }
 
 #object-star-2 {
@@ -56,6 +57,7 @@ video {
   left: 15%;
   top: 25%;
   width: 20%;
+  opacity: 1;
 }
 
 #object-star-3 {
@@ -78,7 +80,7 @@ video {
   position: absolute;
   z-index: 2; /* put .green-box above .dashed-box */
   left: 50%;
-  top: 10%;
+  top: 20%;
   width: 10%;
 }
 
@@ -88,4 +90,33 @@ video {
   left: 85%;
   top: 10%;
   width: 5%;
+}
+
+// horizontal scroll
+
+.h-50 {
+  height: 50vh;
+}
+.h-75 {
+  height: 75vh;
+}
+.h-100 {
+  height: 100vh;
+}
+
+.slider-mask {
+  overflow: hidden;
+}
+
+.slider-track {
+  height: 100%;
+  display: inline-flex;
+  border-radius: 5px;
+}
+
+.slider-track .screen {
+  width: calc(100vw - 30px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
