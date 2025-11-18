@@ -116,4 +116,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // scroll parallax 3
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".manifestation",
+        start: "top top",
+        scrub: 1,
+        ease: "slow(0.7,0.7,false)",
+        pin: true,
+      },
+    })
+    .to("#manif-left-1", {
+      x: "40%",
+      ease: "none",
+      opacity: 1,
+    });
+
+  gsap.to("#manif-right-2", {
+    opacity: 1,
+    x: "-40%",
+    scrollTrigger: {
+      trigger: ".manifestation",
+      start: "top top",
+      end: "+=50%",
+      scrub: 2,
+    },
+  });
 });

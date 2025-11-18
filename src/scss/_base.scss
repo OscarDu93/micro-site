@@ -157,20 +157,17 @@ h1 {
 
 //parallax 3
 
-.manif-contener {
+.manif-wrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
 #manif-left-1 {
-  position: relative;
-  width: 907px;
+  height: 10%;
 }
 
 #manif-right-2 {
-  position: relative;
-  width: 1025px;
+  height: 10%;
 }
 
 #txt-right-1 {
