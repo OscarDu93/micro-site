@@ -9,7 +9,7 @@
 
 .presentation {
   background-color: black;
-  height: 100vh;
+  height: 200vh;
 }
 
 .context {
@@ -20,7 +20,7 @@
   margin-top: 220px;
 }
 
-.revolte {
+.revolte-container {
   margin-top: 206px;
   display: flex;
   flex-direction: column;
@@ -39,7 +39,7 @@ button {
   background: none;
 }
 
-.dead-body {
+.dead-body-container {
   background: #982d3d;
   height: 100vh;
   margin-bottom: 280px;
