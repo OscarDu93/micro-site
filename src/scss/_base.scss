@@ -222,3 +222,105 @@ h1 {
 .newspaper-btn {
   width: 630px;
 }
+
+// cadavre
+
+.object-wrapper-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.object-wrapper-body ~ .object-wrapper-body {
+  justify-content: end;
+}
+
+#object-leg-1 {
+  position: absolute;
+  z-index: 2;
+  left: 70%;
+  top: 70%;
+  width: 10%;
+  opacity: 1;
+}
+
+#object-leg-2 {
+  position: absolute;
+  z-index: 2;
+  left: 70%;
+  top: 80%;
+  width: 10%;
+  opacity: 1;
+}
+
+#object-bassin {
+  position: absolute;
+  z-index: 2;
+  left: 80%;
+  top: 75%;
+  width: 10%;
+  opacity: 1;
+}
+
+#object-torse {
+  position: absolute;
+  z-index: 2;
+  left: 90%;
+  top: 75%;
+  width: 10%;
+  opacity: 1;
+}
+
+#object-arms-1 {
+  position: absolute;
+  z-index: 2;
+  left: 95%;
+  top: 60%;
+  width: 10%;
+  opacity: 1;
+}
+
+#object-arms-2 {
+  position: absolute;
+  z-index: 2;
+  left: 95%;
+  top: 90%;
+  width: 10%;
+  opacity: 1;
+}
+
+#object-head {
+  position: absolute;
+  z-index: 2;
+  left: 90%;
+  top: 75%;
+  width: 10%;
+  opacity: 1;
+}
+
+// marjane apparition
+
+.container-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 280px;
+}
+
+.marjane-placement {
+  width: 846px;
+}
+
+.marjane-dark {
+  height: 100vh;
+  object-fit: none;
+}
+
+.apparition-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+}
