@@ -212,12 +212,13 @@ h1 {
 
 // btn
 
-.news {
+.news-transition {
+  margin-top: 477px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .newspaper-btn {
-  width: 200px;
+  width: 630px;
 }
