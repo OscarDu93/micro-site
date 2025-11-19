@@ -83,9 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     })
     .to("#txt-left-1", {
-      y: "-20%",
+      y: "-100%",
       ease: "none",
-      opacity: 0,
     });
 
   gsap.to("#img-right-2", {
@@ -116,6 +115,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
   // scroll parallax 3
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".manifestation",
+        start: "top top",
+        scrub: 1,
+        end: "+=5",
+      },
+    })
+
+    .to("#txt-right-1", {
+      ease: "none",
+      opacity: 1,
+    });
+
   gsap
     .timeline({
       scrollTrigger: {
@@ -123,13 +138,14 @@ document.addEventListener("DOMContentLoaded", function () {
         start: "top top",
         scrub: 1,
         ease: "slow(0.7,0.7,false)",
-        pin: true,
+        pin: ".manifestation",
       },
     })
     .to("#manif-left-1", {
-      x: "40%",
+      x: "20%",
       ease: "none",
       opacity: 1,
+      end: "+=50%",
     });
 
   gsap.to("#manif-right-2", {
