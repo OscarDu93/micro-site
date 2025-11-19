@@ -158,4 +158,159 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: 2,
     },
   });
+
+  // apparition
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".revolte-container",
+        start: "bottom bottom",
+        scrub: 2,
+        ease: "slow(0.7,0.7,false)",
+        pin: ".manifestation",
+      },
+    })
+    .to(".apparition-1", {
+      scale: 1.1,
+      ease: "none",
+      opacity: 1,
+    });
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".revolte-container",
+        start: "bottom bottom",
+        scrub: 2,
+        ease: "slow(0.7,0.7,false)",
+        pin: true,
+      },
+    })
+    .to(".apparition-2", {
+      scale: 1.1,
+      ease: "none",
+      opacity: 1,
+    });
+
+  // solo
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".god",
+        start: "bottom bottom",
+        scrub: 2,
+        pin: true,
+      },
+    })
+    .to(".god-container", {
+      ease: "none",
+      opacity: 1,
+    });
+
+  // disslocation
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".dead-body-container",
+        start: "top top",
+        scrub: 2,
+        pin: true,
+      },
+    })
+    .to("#object-leg-1", {
+      y: -20,
+      x: -10,
+    })
+    .to(
+      "#object-leg-2",
+      {
+        y: 20,
+        x: -10,
+      },
+      0
+    )
+    .to(
+      "#object-bassin",
+      {
+        scale: 1.1,
+      },
+      0
+    )
+    .to(
+      "#object-torse",
+      {
+        scale: 1.1,
+      },
+      0
+    )
+    .to(
+      "#object-arms-1",
+      {
+        y: -20,
+        x: -10,
+        scale: 1.1,
+      },
+      0
+    )
+    .to(
+      "#object-arms-2",
+      {
+        y: -20,
+        x: -10,
+        scale: 1.1,
+      },
+      0
+    )
+    .to(
+      "#object-head",
+      {
+        scale: 1.1,
+      },
+      0
+    );
+
+  //marjane solo
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".dead-body-container",
+        start: "bottom bottom",
+        scrub: 1,
+      },
+    })
+    .to(".apparition-1-solo", {
+      ease: "none",
+      opacity: 1,
+      scale: 1.1,
+    });
+
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".container-images",
+        start: "bottom bottom",
+        scrub: 1,
+        pin: true,
+      },
+    })
+    .to(".marjane-dark", {
+      ease: "none",
+      scale: -0,
+      rotate: 30,
+    });
 });
+
+// Vérifie qu'on est bien sur la bonne page
+if (window.location.pathname.endsWith("page1.html")) {
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    if (scrollPosition >= pageHeight) {
+      window.location.href = "book-page.html"; // page de destination
+    }
+  });
+}
