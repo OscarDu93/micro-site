@@ -9,6 +9,61 @@ document.addEventListener("DOMContentLoaded", function () {
   //code JS ici
   //parallax intro
 
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: ".object-wrapper",
+        start: "top top",
+        scrub: 2,
+        pin: true,
+      },
+    })
+    .to("#object-girl", {
+      y: -100,
+    })
+    .to(
+      "#object-star-1",
+      {
+        y: -100,
+      },
+      0
+    )
+    .to(
+      "#object-star-2",
+      {
+        y: -200,
+      },
+      0
+    )
+    .to(
+      "#object-star-3",
+      {
+        y: -300,
+      },
+      0
+    )
+    .to(
+      "#object-star-4",
+      {
+        y: -100,
+      },
+      0
+    )
+    .to(
+      "#object-star-5",
+      {
+        y: -200,
+      },
+      0
+    )
+    .to(
+      "#object-star-6",
+      {
+        y: -300,
+      },
+      0
+    );
+
   // scroll image
   gsap.to(".slider-track", {
     scrollTrigger: {
@@ -67,25 +122,12 @@ document.addEventListener("DOMContentLoaded", function () {
     x: "100%",
     scrollTrigger: {
       trigger: "#txt-left-1",
-      start: "bottom bottom",
-      end: "+=10%",
+      start: "top top",
+      end: "+=5%",
       scrub: 1,
+      pin: true,
     },
   });
-
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: "#txt-left-1",
-        start: "top top",
-        scrub: 2,
-        ease: "slow(0.7,0.7,false)",
-      },
-    })
-    .to("#txt-left-1", {
-      y: "-100%",
-      ease: "none",
-    });
 
   gsap.to("#img-right-2", {
     opacity: 1,
@@ -97,22 +139,6 @@ document.addEventListener("DOMContentLoaded", function () {
       scrub: 2,
     },
   });
-
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: "#txt-left-1",
-        start: "top top",
-        scrub: 5,
-        ease: "slow(0.7,0.7,false)",
-        pin: true,
-      },
-    })
-    .to("#img-right-2", {
-      y: "-40%",
-      ease: "none",
-      opacity: 0,
-    });
 
   // scroll parallax 3
 
@@ -303,14 +329,21 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Vérifie qu'on est bien sur la bonne page
-if (window.location.pathname.endsWith("page1.html")) {
+// switch html
+if (window.location.pathname.endsWith("buy-page.html")) {
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY + window.innerHeight;
     const pageHeight = document.documentElement.scrollHeight;
 
     if (scrollPosition >= pageHeight) {
-      window.location.href = "book-page.html"; // page de destination
+      window.location.href = "book-page.html";
     }
   });
 }
+
+// transition de fin
+
+const transition = document.querySelector(".dark-transition");
+transition.addEventListener("animationend", () => {
+  transition.style.display = "none";
+});

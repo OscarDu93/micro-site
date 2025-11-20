@@ -14,6 +14,14 @@ video {
   display: block;
 }
 
+.page-title {
+  bottom: 5%;
+  left: 2%;
+  position: fixed;
+  z-index: 20;
+  mix-blend-mode: exclusion;
+}
+
 // parallax
 
 .object-wrapper {
@@ -219,6 +227,21 @@ h1 {
 
 .newspaper-btn {
   width: 630px;
+  animation-name: newsAnimation;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes newsAnimation {
+  0% {
+    transform: translatey(0%);
+  }
+  100% {
+    transform: translatey(-10%);
+  }
 }
 
 // cadavre
@@ -328,6 +351,8 @@ h1 {
   width: 100%;
 }
 
+// page achat
+
 h2 {
   margin-top: 200px;
 }
@@ -344,6 +369,14 @@ h2 {
   border: 2px solid #000;
   background: #fff;
   padding: 10px 20px;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.btn:hover {
+  background: #982d3d;
+  border: 2px solid #ffffff;
+  color: #fff;
 }
 
 .tome-1 {
@@ -431,4 +464,31 @@ h2 {
 #droits {
   display: flex;
   justify-content: end;
+}
+
+.dark-transition-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dark-transition {
+  background-color: #000;
+  position: absolute;
+  height: 200vh;
+  width: 100%;
+  animation-name: switch;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes switch {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
 }
