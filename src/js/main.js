@@ -341,9 +341,69 @@ if (window.location.pathname.endsWith("buy-page.html")) {
   });
 }
 
-// transition de fin
+if (window.location.pathname.endsWith("book-page.html")) {
+  let hasChanged = false;
 
-const transition = document.querySelector(".dark-transition");
-transition.addEventListener("animationend", () => {
-  transition.style.display = "none";
+  window.addEventListener("scroll", () => {
+    if (hasChanged) return;
+
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    // 👉 Condition 2 : Scroll en haut → aller à l'autre page
+    if (window.scrollY === 0) {
+      hasChanged = true;
+      window.location.href = "buy-page.html"; // <-- Mets ici la page voulue
+    }
+  });
+}
+
+if (window.location.pathname.endsWith("buy-page.html")) {
+  let hasChanged = false;
+
+  window.addEventListener("scroll", () => {
+    if (hasChanged) return;
+
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+
+    // 👉 Condition 2 : Scroll en haut → aller à l'autre page
+    if (window.scrollY === 0) {
+      hasChanged = true;
+      window.location.href = "index.html"; // <-- Mets ici la page voulue
+    }
+  });
+}
+
+// transition
+
+const darkTransition = document.querySelector(".dark-transition");
+const whiteTransition = document.querySelector(".white-transition");
+
+if (darkTransition) {
+  darkTransition.addEventListener("animationend", () => {
+    darkTransition.style.display = "none";
+  });
+}
+
+if (whiteTransition) {
+  whiteTransition.addEventListener("animationend", () => {
+    whiteTransition.style.display = "none";
+  });
+}
+
+// cursor
+const cursor = document.querySelector(".cursor");
+const links = document.querySelectorAll("a");
+
+document.addEventListener("mousemove", (event) => {
+  cursor.style.top = event.y + "px";
+  cursor.style.left = event.x + "px";
+});
+
+links.forEach((link) => {
+  link.addEventListener("mouseenter", () => cursor.classList.add("link-hover"));
+  link.addEventListener("mouseleave", () =>
+    cursor.classList.remove("link-hover")
+  );
 });
